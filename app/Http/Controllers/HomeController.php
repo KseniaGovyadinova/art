@@ -23,6 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        //return view('home');
+        return redirect('/profile/' . auth()->user()->id);
     }
+    public function __invoke()
+    {
+        //return view('home');
+        return redirect('/profile/' . auth()->user()->id);
+    }
+
 }
